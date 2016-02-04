@@ -1,0 +1,100 @@
+{% extends 'main.html' %}
+{% load bootstrap_tags %}
+{% load staticfiles %}
+{% block turnir %}
+<!--<div class="col-lg-8">-->
+<!--<div class="body-container">-->
+    <!--<form action="/context/addcontext/" method="post" class="form-horizontal" role="form" >-->
+        <!--{% csrf_token %}-->
+
+    <!--<div class="row">-->
+        <!--<div class="col-lg-12">-->
+            <!--<label for="context_name">Название турнира </label>-->
+            <!--{{ form_add_context.context_name }}-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<br>-->
+    <!--<div class="row">-->
+    <!--<div class="col-xs-4">-->
+        <!--<input type="text" class="form-control">-->
+    <!--</div>-->
+    <!--<div class="col-xs-4">-->
+        <!--<input type="text" class="form-control">-->
+    <!--</div>-->
+    <!--<div class="col-xs-4">-->
+        <!--<input type="text" class="form-control">-->
+    <!--</div>-->
+<!--</div>-->
+<!--<br>-->
+    <!--<div class="row">-->
+    <!--<div class="col-xs-4">-->
+        <!--<input type="text" class="form-control">-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<br>-->
+    <!--<div class="row">-->
+    <!--<div class="col-xs-4">-->
+        <!--<input type="text" class="form-control">-->
+    <!--</div>-->
+    <!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
+<!--<br />-->
+
+<div class="col-lg-2"></div>
+
+<div class="col-lg-8" id="tratata">
+    <div class="body-container">
+    <form action="/context/addcontext/" method="post" class="form-horizontal" role="form" >
+    {% csrf_token %}
+<div class="row">
+    <!--{{ form_add_context|as_bootstrap }}-->
+        <div class="col-lg-12">
+    <label for="context_name">Название турнира </label>
+    {{ form_add_context.context_name }}
+        </div>
+</div>
+       <div class="row">
+        <div class="col-lg-4">
+    <label for="context_name">Дата турнира </label>
+    {{ form_add_context.context_date}}
+        </div>
+           <div class="col-lg-4">
+               <label for="context_organizer">Организатор турнира </label>
+               {{ form_add_context.context_organizer }}
+           </div>
+           <div class="col-lg-4">
+               <label for="context_sity">Город </label>
+               {{ form_add_context.context_sity }}
+           </div>
+       </div>
+        <div class="row">
+                        <div class="col-lg-12">
+                    <label for="context_place">Место проведения </label>
+                    {{ form_add_context.context_place }}
+                </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+    <label for="context_dance_program">Танцевальные программы </label>
+    {{ form_add_context.context_dance_program }}
+    <label for="context_name">Возрастные категории </label>
+    {{ form_add_context.context_age_category }}
+    <label for="context_name">Лиги </label>
+    {{ form_add_context.context_dance_league }}
+        </div></div>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+    <div class="button-group">
+        <br>
+        <button type="button submit" class="btn btn-large btn-block btn-primary">Добавить</button>
+    </div>
+            </div><div class="col-lg-2"></div>
+</form>
+</div>
+</div>
+    <div class="col-lg-2"></div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'main.html' %}
+{% load staticfiles %}
+{% block turnir %}
+<div class="col-lg-2"></div>
+<div class="col-lg-8">
+<div class="body-container">
+<input id="lalala" name="lalala" style="display:none" value="{{contexta}}"></input>
+<form action="/context/{{contexta}}/" method="post" class="form-horizontal" role="form" >
+    {% csrf_token %}
+    <label for="search">Участник №1 </label>
+    {{ form.context_dancer_name }}
+    <datalist id="search-results"></datalist>
+    <label for="exampleInputEmail1">Танцевальная программа</label>
+    {{ form.context_dance_program }}
+    <datalist id="search-results1"></datalist>
+    <label for="exampleInputEmail1">Возрастная категория</label>
+    {{ form.context_age_category }}
+    <datalist id="search-results2"></datalist>
+    <label for="exampleInputEmail1">Танцевальная лига</label>
+    {{ form.context_dance_league }}
+    <datalist id="search-results3"></datalist>
+    <label>Книжка:</label>
+    <div>
+        <div class="radio">
+            <label><input type="radio" name="optradio">Wuca</label>
+            <input id="lalala" name="Номер книжки"  ></input>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="optradio">не Wuca</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="optradio">Нет Книжки</label>
+
+        </div>
+        <div class="radio disabled">
+            <!--<label><input type="radio" name="optradio" disabled>Option 3</label>-->
+            <label><input type="radio" name="optradio">Заказать книжку Wuca</label>
+        </div>
+    </div>
+    <div>
+        <label for="lalalala">Фонограмма</label>
+        <input id="lalalala" type="file" name="namber_book"  ></input>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+        <button type="button submit" class="btn btn-primary">Добавить</button>
+    </div>
+</form>
+    </div>
+    <div class="col-lg-2"></div>
+{% endblock %}

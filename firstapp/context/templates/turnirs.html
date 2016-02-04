@@ -1,0 +1,61 @@
+{% extends 'main.html' %}
+{% load bootstrap_tags %}
+{% load staticfiles %}
+{% block turnir %}
+{% if user.is_admin %}
+
+{%endif%}
+<div class="body-container">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Дата проведения</th>
+            <th>Название</th>
+            <th>Город</th>
+            <th>Место проведения</th>
+            <th>Организатор</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for context in contexts %}
+        <tr>
+            <td>{{context.context_date}}</td>
+            {% if user.is_authenticated %}
+            <td><a href="/context/{{context.id}}">{{context.context_name}}</a></td>
+            {% else %}
+            <td>{{context.context_name}}</td>
+            {% endif %}
+            <td>{{context.context_sity}}</td>
+            <td>{{context.context_place}}</td>
+            <td>{{context.context_organizer}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+<div class="modal fade" backdrop="static" id="ModalAddDancerContext" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Добавить танцора</h4>
+            </div>
+            <div class="modal-body">
+                <form action="/context/addcontext/" method="post" class="form-horizontal" role="form" >
+                    {% csrf_token %}
+                    {{ form_add_context|as_bootstrap }}
+                    <!--<input class="button" ">-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                        <button type="button submit" class="btn btn-primary">Добавить</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

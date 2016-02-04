@@ -1,0 +1,48 @@
+{% extends 'main.html' %}
+{% load bootstrap_tags %}
+{% load staticfiles %}
+{% block article %}
+{% if user.is_admin %}
+<div class="modal fade" id="ModalAddNews" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Добавить танцора</h4>
+            </div>
+            <div class="modal-body">
+                <form action="/news/addnews/" method="post" class="form-horizontal" role="form" >
+
+                    {% csrf_token %}
+                    {{ form|as_bootstrap }}
+                    <!--<input class="button" ">-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                        <button type="button submit" class="btn btn-primary">Добавить</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{% endif %}
+
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+{% for article in articles %}
+        <div class="body-container">
+<h4>{{article.article_title}} </h4>
+<h6> Дата публикации: {{ article.article_date }} </h6>
+{% filter linebreaksbr %}
+<p> {{ article.article_text|truncatechars:300 }}</p>
+        <a href="/news/{{article.id}}">Читать продолжение</a>
+        </div>
+{% endfilter %}
+{% endfor %}
+    </div>
+    <div class="col-lg-2"></div>
+</div>>
+{% endblock %}

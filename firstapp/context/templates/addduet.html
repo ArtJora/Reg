@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% load staticfiles %}
+{% block turnir %}
+<div class="col-lg-2"></div>
+<div class="col-lg-8">
+    <div class="body-container">
+<input id="lalala" name="lalala" style="display:none" value="{{contexta}}"></input>
+<form action="/context/{{contexta}}/" method="post" class="form-horizontal" role="form" >
+    {% csrf_token %}
+    <label for="search">Участник №1 </label>
+    {{ form.context_dancer_name }}
+    <datalist id="search-results"></datalist>
+    <label for="search">Участник №2 </label>
+    {{ form2.context_dancer_name2 }}
+    <datalist id="search-results2_duet"></datalist>
+    <label for="exampleInputEmail1">Тренер</label>
+    {{ form.context_dancer_treaner }}
+    <label for="exampleInputEmail1">Танцевальная программа</label>
+    {{ form.context_dance_program }}
+    <datalist id="search-results1"></datalist>
+    <label for="exampleInputEmail1">Возрастная категория</label>
+    {{ form.context_age_category }}
+    <datalist id="search-results2"></datalist>
+
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+        <button type="button submit" class="btn btn-primary">Добавить</button>
+    </div>
+</form>
+    </div></div><div class="col-lg-2"></div>
+{% endblock %}

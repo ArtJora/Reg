@@ -1,0 +1,154 @@
+{% extends 'main.html' %}
+{% load bootstrap_tags %}
+{% load staticfiles %}
+{% block turnir %}
+<div class="body-container">
+<div class="zxc"id="zxc">
+
+{% if user.is_authenticated %}
+    <p>Регистрация на конкурс "{{context_name}}" танцевального клуба "{{club}}". </p>
+    <p>Тренер: {{treaner}}</p>
+    <div class="btn-group">
+    <a href="/context/{{contexta}}/addsolo/" type="button" class="btn btn-primary" >
+        Добавить соло
+    </a>
+    <a href="/context/{{contexta}}/addduet/" type="button" class="btn btn-primary" >
+        Добавить дуэт
+    </a>
+    <a href="/context/{{contexta}}/addgruppa/" type="button" class="btn btn-primary" >
+        Добавить группу
+    </a>
+
+</div>
+
+{% endif %}
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+<input id="lalala" name="lalala" style="display:none" value="{{contexta}}"></input>
+        <tr>
+            <th>Участники</th>
+            <th>Кол-во</th>
+            <th>Возрастная категория</th>
+            <th>Лига</th>
+            <th>Танцевальная программа</th>
+            <th>Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for context_dancer in context_dancers %}
+        <tr>
+            <td>{{context_dancer.context_dancer_name|safe|linebreaks}}</td>
+            {% if context_dancer.context_dancer_sum = 1 %}
+            <td>
+                Соло</td>
+            {% endif %}
+            {% if context_dancer.context_dancer_sum = 2 %}
+            <td>
+                Дуэт</td>
+            {% endif %}
+            {% if context_dancer.context_dancer_sum > 2 and context_dancer.context_dancer_sum < 8    %}
+            <td>
+                Группа</td>
+            {% endif %}
+            {% if context_dancer.context_dancer_sum > 7 and context_dancer.context_dancer_sum < 24    %}
+            <td>
+                Формейшн</td>
+            {% endif %}
+            {% if context_dancer.context_dancer_sum > 23 and context_dancer.context_dancer_sum < 1500    %}
+            <td>
+                Продакшн</td>
+            {% endif %}
+            {% if context_dancer.context_dancer_sum = 0    %}
+            <td>
+                Ошибка</td>
+            {% endif %}
+
+            <td>{{context_dancer.context_age_category}}</td>
+            <td>{{context_dancer.context_dance_league}}</td>
+            <td>{{context_dancer.context_dance_program}}</td>
+
+
+
+            <td><a href="/context/delete/{{contexta}}/{{context_dancer.id}}"><span class="glyphicon glyphicon-remove-sign"></span> Удалить</a> </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+<div class="modal fade" id="ModalAddDancerContext"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Добавить танцора</h4>
+            </div>
+            <div class="modal-body">
+                <form action="/context/{{contexta}}/" method="post" class="form-horizontal" role="form" >
+                    {% csrf_token %}
+                    <label for="search">Участник 1 </label>
+                    {{ form.context_dancer_name }}
+                    <datalist id="search-results"></datalist>
+                    <label for="exampleInputEmail1">Тренер</label>
+                    {{ form.context_dancer_treaner }}
+                    <label for="exampleInputEmail1">Танцевальная программа</label>
+                    {{ form.context_dance_program }}
+                    <datalist id="search-results1"></datalist>
+                    <label for="exampleInputEmail1">Возрастная категория</label>
+                    {{ form.context_age_category }}
+                    <datalist id="search-results2"></datalist>
+                    <label for="exampleInputEmail1">Танцевальная лига</label>
+                    {{ form.context_dance_league }}
+                    <datalist id="search-results3"></datalist>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                        <button type="button submit" class="btn btn-primary">Добавить</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    <div class="modal fade" id="ModalAddDancerContext_duet"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Добавить танцора</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="/context/{{contexta}}/add_duet/" method="post" class="form-horizontal" role="form" >
+                        {% csrf_token %}
+                        <label for="search">Участник 1 </label>
+                        {{ form2.context_dancer_name }}
+                        <datalist id="search-results_duet"></datalist>
+                        <label for="search">Участник 2 </label>
+                        {{ form2.context_dancer_name2 }}
+                        <datalist id="search-results2_duet"></datalist>
+                        <label for="exampleInputEmail1">Танцевальная программа</label>
+                        {{ form2.context_dance_program }}
+                        <datalist id="context_dance_program_duet-results"></datalist>
+                        <label for="exampleInputEmail1">Возрастная категория</label>
+                        {{ form2.context_age_category }}
+                        <datalist id="context_age_category_duet-results"></datalist>
+                        <!--<label for="exampleInputEmail1">Танцевальная лига</label>-->
+                        <!--{{ form2.context_dance_league }}-->
+                        <!--<datalist id="context_dance_league_duet-results"></datalist>-->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                            <button type="button submit" class="btn btn-primary">Добавить</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% load bootstrap_tags %}
+{% load staticfiles %}
+{% block article %}
+<div class="col-lg-2"></div>
+<div class="col-lg-8">
+<div class="body-container">
+
+<form action="/news/savenews/" method="post" class="form-horizontal" role="form" >
+
+    {% csrf_token %}
+    {{ form|as_bootstrap }}
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+        <button type="button submit" class="btn btn-primary">Добавить</button>
+    </div>
+</form>
+
+    </div>
+    <div class="col-lg-2"></div>
+{% endblock %}

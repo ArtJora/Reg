@@ -1,0 +1,6 @@
+{% for dancer in dancers %}
+{% for context_age_category in dancer.context_age_category.all %}
+<option> {{ context_age_category }}</option>
+
+{% endfor %}
+{% endfor %}

@@ -1,0 +1,6 @@
+{% for dancer in dancers %}
+{% for context_dance_league in dancer.context_dance_league.all %}
+<option> {{ context_dance_league }}</option>
+
+{% endfor %}
+{% endfor %}
