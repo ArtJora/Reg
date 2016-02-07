@@ -25,6 +25,12 @@ def login(request):
     else:
         return render_to_response('login.html', args)
 
+def profile(request):
+    args = {}
+    args.update(csrf(request))
+    args['user'] = auth.get_user(request)
+    return render_to_response('profile.html', args)
+
 
 
 def logout(request):

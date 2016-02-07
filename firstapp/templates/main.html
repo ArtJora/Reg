@@ -108,11 +108,27 @@
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
                 {% if user.is_authenticated %}
-                    {% if user.is_admin %}
-                         <li><a href="/auth/logout/"><span class="glyphicon glyphicon-log-out"></span> Выход: {{ user.name }}<kbd>Организатор</kbd></a></li>
-                    {% else %}
-                         <li><a href="/auth/logout/"><span class="glyphicon glyphicon-log-out"></span> Выход: {{ user.name }}<kbd>Тренер</kbd></a></li>
-                    {% endif %}
+                    <li class="dropdown">
+                        <a id="drop2" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            {% if user.is_admin %}
+                                {{ user.name }}<kbd>Организатор</kbd>
+                            {% else %}
+                                {{ user.name }}<kbd>Тренер</kbd>
+                            {% endif %}
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/auth/profile/">Профиль</a></li>
+
+                            <li class="divider"></li>
+                            <li><a href="/auth/logout/"><span class="glyphicon glyphicon-log-out"></span> Выход </a></li>
+                        </ul>
+                    </li>
+
+
+
+
+
                 {% else %}
                 <li><a href="/auth/login/"><span class="glyphicon glyphicon-log-in"></span> Вход</a></li></li>
                 <li><a href="/auth/register/"><span class="glyphicon glyphicon-user"></span> Регистрация</a></li>

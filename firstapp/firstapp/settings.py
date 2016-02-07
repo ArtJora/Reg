@@ -73,11 +73,11 @@ ROOT_URLCONF = 'firstapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/kobart/djangoenv/bin/firstapp/templates',
-                 '/home/kobart/djangoenv/bin/firstapp/news/templates' ,
-                 '/home/kobart/djangoenv/bin/firstapp/dancer/templates' ,
-                 '/home/kobart/djangoenv/bin/firstapp/context/templates' ,
-                 '/home/kobart/djangoenv/bin/firstapp/extuser/templates' ],
+        'DIRS': ['/home/kobart/djangoenv/bin/Reg/firstapp/templates',
+                 '/home/kobart/djangoenv/bin/Reg/firstapp/news/templates' ,
+                 '/home/kobart/djangoenv/bin/Reg/firstapp/dancer/templates' ,
+                 '/home/kobart/djangoenv/bin/Reg/firstapp/context/templates' ,
+                 '/home/kobart/djangoenv/bin/Reg/firstapp/extuser/templates' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,7 +133,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    ('static', '/home/kobart/djangoenv/bin/firstapp/static'),
+    ('static', '/home/kobart/djangoenv/bin/Reg/firstapp/static'),
 )
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
