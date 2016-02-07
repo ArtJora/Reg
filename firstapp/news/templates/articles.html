@@ -36,9 +36,14 @@
         <div class="body-container">
 <h4>{{article.article_title}} </h4>
 <h6> Дата публикации: {{ article.article_date }} </h6>
-{% filter linebreaksbr %}
+
+            {% filter linebreaksbr %}
+
 <p> {{ article.article_text|truncatechars:300 }}</p>
-        <a href="/news/{{article.id}}">Читать продолжение</a>
+            {% if article.article_text|length >= 300 %}
+            <a href="/news/{{article.id}}">Читать продолжение</a>
+            {% endif %}
+
         </div>
 {% endfilter %}
 {% endfor %}

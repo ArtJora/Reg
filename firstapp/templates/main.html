@@ -73,7 +73,7 @@
                 {% if user.is_admin %}
                 <li class="dropdown">
                     <a id="drop2" href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Рассписание турниров
+                        Турниры
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -109,9 +109,9 @@
                 <ul class="nav navbar-nav">
                 {% if user.is_authenticated %}
                     {% if user.is_admin %}
-                         <li><a href="/auth/logout/"><span class="glyphicon glyphicon-log-out"></span> Выход: {{ user.name }}(Организатор)</a></li>
+                         <li><a href="/auth/logout/"><span class="glyphicon glyphicon-log-out"></span> Выход: {{ user.name }}<kbd>Организатор</kbd></a></li>
                     {% else %}
-                         <li><a href="/auth/logout/"><span class="glyphicon glyphicon-log-out"></span> Выход: {{ user.name }}(Тренер)</a></li>
+                         <li><a href="/auth/logout/"><span class="glyphicon glyphicon-log-out"></span> Выход: {{ user.name }}<kbd>Тренер</kbd></a></li>
                     {% endif %}
                 {% else %}
                 <li><a href="/auth/login/"><span class="glyphicon glyphicon-log-in"></span> Вход</a></li></li>
