@@ -19,13 +19,14 @@ class Dancer(models.Model):
 
 def calculate_age(born):
     today = datetime.date.today()
-    try: # raised when birth day is February 29 and the current year is not a leap year
-        birthday = born.replace(year=today.year)
-    except ValueError:
-        birthday = born.replace(year=today.year, day=born.day-1)
-
-    if birthday.month >= today.month and birthday.day >= today.day :
-
-        return today.year - born.year
+    birthday = born
+    if birthday.month <= today.month:
+        if birthday.month < today.month:
+            return today.year - birthday.year
+        if birthday.month == today.month:
+            if birthday.day <= today.day:
+                return today.year - birthday.year
+            else:
+                return today.year - birthday.year - 1
     else:
-        return today.year - born.year - 1
+        return today.year - birthday.year - 1
