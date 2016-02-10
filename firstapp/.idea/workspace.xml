@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="952527e4-0d72-4880-989f-5846cb601273" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dancers/models.py" afterPath="$PROJECT_DIR$/dancers/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/our_db.sqlite3" afterPath="$PROJECT_DIR$/our_db.sqlite3" />
     </list>
     <ignored path="firstapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -684,7 +682,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455125154093</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="C правильным расчетом возраста участника">
+      <created>1455126694620</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1455126694620</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -729,7 +733,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="С заготовкой для профиля пользователя." />
     <MESSAGE value="С заготовкой для профиля пользователя.&#10;C расчетом возраста танцора" />
-    <option name="LAST_COMMIT_MESSAGE" value="С заготовкой для профиля пользователя.&#10;C расчетом возраста танцора" />
+    <MESSAGE value="C правильным расчетом возраста участника" />
+    <option name="LAST_COMMIT_MESSAGE" value="C правильным расчетом возраста участника" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
