@@ -10,6 +10,7 @@
         <thead>
         <tr>
             <th>Дата рождения</th>
+            <th>Возраст</th>
             <th>Имя</th>
             <!--<th>Тренер</th>-->
             <th>Кол-во баллов</th>
@@ -20,6 +21,7 @@
         {% for dancer in dancers %}
         <tr>
             <td><a href="#">{{dancer.dancer_birthday }}</a></td>
+            <td>{{ dancer.age }}</td>
             <td>{{dancer.dancer_name}}</td>
             <!--<td>{{ dancer.dancer_trainer.name }}</td>-->
             <td>{{dancer.dancer_balls}}</td>

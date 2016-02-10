@@ -5,10 +5,12 @@ from extuser.models import ExtUser
 from django.contrib import auth
 from django.core.context_processors import csrf
 from dancers.forms import DancerForm
+from datetime import date
 # Create your views here.
 
 
 def dancers(request):
+
     args = {}
     args.update(csrf(request))
     args['form'] = DancerForm()
