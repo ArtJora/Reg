@@ -27,6 +27,8 @@ class Age_category(models.Model):
         'Возрастная категория',
         max_length = 200
     )
+    min_age = models.IntegerField(unique=True)
+    max_age = models.IntegerField(unique=True)
     def __unicode__(self):
         return self.age_category_name
     # dance_programs = models.ManyToManyField(Dance_program)

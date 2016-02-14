@@ -37,7 +37,7 @@ class Dance_program_Admin(admin.ModelAdmin):
 admin.site.register(Dance_program, Dance_program_Admin)
 
 class Age_category_Admin(admin.ModelAdmin):
-    fields = ['age_category_name']
+    fields = ['age_category_name','min_age','max_age']
     list_display = [
         'age_category_name',
     ]

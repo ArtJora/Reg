@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django import forms
-from models import Context_dancer, Context
+from models import Context_dancer, Context, Dance_program, Age_category, Dance_league
 
 from django.contrib import auth
 
@@ -154,6 +154,21 @@ class ContextContentForm(forms.ModelForm):
     context_date = forms.DateField(
         label='Дата',
         widget=forms.DateTimeInput(attrs={'class':'form-control','input type':'date'})
+    )
+    context_dance_program = forms.ModelMultipleChoiceField(
+        queryset=Dance_program.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=False
+    )
+    context_age_category = forms.ModelMultipleChoiceField(
+        queryset=Age_category.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=False
+    )
+    context_dance_league = forms.ModelMultipleChoiceField(
+        queryset=Dance_league.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=False
     )
 
 

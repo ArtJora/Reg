@@ -49,6 +49,7 @@
             <label class="navbar-brand text-muted">MyReg.Only</label>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
+        
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav ">
                 {% if user.is_admin %}
@@ -65,6 +66,7 @@
                     </ul>
                 </li>
                 {% else %}
+
                 <li>
                     <a href="/news/">Новости сайта</a>
 
@@ -118,7 +120,7 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="/auth/profile/">Профиль</a></li>
+                            <li><a href="/auth/profile/"><span class="glyphicon glyphicon-user"></span> Профиль</a></li>
 
                             <li class="divider"></li>
                             <li><a href="/auth/logout/"><span class="glyphicon glyphicon-log-out"></span> Выход </a></li>
