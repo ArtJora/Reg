@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^(?P<context_id>\d+)/$', 'context.views.context_dancers'),
     url(r'^delete/(?P<context_id>\d+)/(?P<dancer_id>\d+)/$', 'context.views.delete_dancers'),
     url(r'^search/$', 'context.views.search_dancer'),
+    url(r'^search2/$', 'context.views.search_dancer2'),
     url(r'^search_dance_program/$', 'context.views.search_dance_program'),
     url(r'^search_age_category/$', 'context.views.search_age_category'),
     url(r'^search_dance_league/$', 'context.views.search_dance_league'),

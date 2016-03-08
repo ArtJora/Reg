@@ -106,21 +106,6 @@ class ContextDancerForm(forms.ModelForm):
                                       'value':'',
                                       'autocomplete':'off'})
     )
-
-
-
-    context_dance_program = forms.CharField(
-        label='Танцевальная программа',
-        widget=forms.TextInput(attrs={'type':'text',
-                                      'name':'context_dance_program',
-                                      'class':'form-control',
-                                      'required':'True',
-                                      'id':'context_dance_program',
-                                      'placeholder':'Выберите танцевальную программу',
-                                      'list':'search-results1',
-                                      'value':'',
-                                      'autocomplete':'off'})
-    )
     context_age_category = forms.CharField(
         label='Возрастная категория',
         widget=forms.TextInput(attrs={'type':'text',
@@ -146,6 +131,21 @@ class ContextDancerForm(forms.ModelForm):
                                       'value':'',
                                       'autocomplete':'off'})
     )
+
+
+    context_dance_program = forms.CharField(
+        label='Танцевальная программа',
+        widget=forms.TextInput(attrs={'type':'text',
+                                      'name':'context_dance_program',
+                                      'class':'form-control',
+                                      'required':'True',
+                                      'id':'context_dance_program',
+                                      'placeholder':'Выберите танцевальную программу',
+                                      'list':'search-results1',
+                                      'value':'',
+                                      'autocomplete':'off'})
+    )
+
 class ContextContentForm(forms.ModelForm):
     class Meta:
         model = Context
@@ -154,11 +154,6 @@ class ContextContentForm(forms.ModelForm):
     context_date = forms.DateField(
         label='Дата',
         widget=forms.DateTimeInput(attrs={'class':'form-control','input type':'date'})
-    )
-    context_dance_program = forms.ModelMultipleChoiceField(
-        queryset=Dance_program.objects.all(),
-        widget=forms.CheckboxSelectMultiple,
-        required=False
     )
     context_age_category = forms.ModelMultipleChoiceField(
         queryset=Age_category.objects.all(),
@@ -170,6 +165,13 @@ class ContextContentForm(forms.ModelForm):
         widget=forms.CheckboxSelectMultiple,
         required=False
     )
+    context_dance_program = forms.ModelMultipleChoiceField(
+        queryset=Dance_program.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=False
+    )
+
+
 
 
 
@@ -230,15 +232,4 @@ class ContextDuetForm(forms.ModelForm):
                                       'value':'',
                                       'autocomplete':'off'})
     )
-    # context_dance_league = forms.CharField(
-    #     label='Возрастная категория',
-    #     widget=forms.TextInput(attrs={'type':'text',
-    #                                   'required':'True',
-    #                                   'name':'context_dance_league_duet',
-    #                                   'class':'form-control',
-    #                                   'id':'context_dance_league_duet',
-    #                                   'placeholder':'Выберите танцевальную программу',
-    #                                   'list':'context_dance_league_duet-results',
-    #                                   'value':'',
-    #                                   'autocomplete':'off'})
-    # )
+

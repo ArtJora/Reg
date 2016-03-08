@@ -162,6 +162,24 @@ def search_dancer(request):
     args['dancers'] = Dancer.objects.filter(dancer_name__istartswith=search_text,dancer_trainer=auth.get_user(request))
     return render_to_response('3.html', args)
 
+def search_dancer2(request):
+    if request.method == 'POST':
+        search_text = request.POST['search_text']
+        del_name1 = request.POST['del_name1']
+        del_name2 = request.POST['del_name2']
+        del_name3 = request.POST['del_name3']
+        del_name4 = request.POST['del_name4']
+        del_name5 = request.POST['del_name5']
+        del_name6 = request.POST['del_name6']
+        del_name7 = request.POST['del_name7']
+    else:
+        search_text = ''
+    args = {}
+    args.update(csrf(request))
+    args['hello'] = 'Hello world'
+    args['dancers'] = Dancer.objects.filter(dancer_name__istartswith=search_text,dancer_trainer=auth.get_user(request)).exclude(dancer_name=del_name1).exclude(dancer_name=del_name2).exclude(dancer_name=del_name3).exclude(dancer_name=del_name4).exclude(dancer_name=del_name5).exclude(dancer_name=del_name6).exclude(dancer_name=del_name7)
+    return render_to_response('3.html', args)
+
 def search_dance_program(request):
     if request.method == 'POST':
         search_text = request.POST['search_text']

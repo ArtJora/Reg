@@ -20,10 +20,12 @@ $(document).ready(function () {
 
     $('#context_dancer_name2').focus(
         function () {
+
                $.ajax({
                     type: "POST",
-                    url: "/context/search/",
+                    url: "/context/search2/",
                     data: {
+                        'del_name1' : $('#context_dancer_name').val(),
                         'search_text' : $('#context_dancer_name2').val(),
                         'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
                     },
@@ -85,8 +87,15 @@ $(document).ready(function () {
 
                $.ajax({
                     type: "POST",
-                    url: "/context/search/",
+                    url: "/context/search2/",
                     data: {
+                        'del_name1' : $('#context_dancer_name').val(),
+                        'del_name2' : $('#context_dancer_name2_duet').val(),
+                        'del_name3' : $('#context_dancer_name3_duet').val(),
+                        'del_name4' : $('#context_dancer_name4_duet').val(),
+                        'del_name5' : $('#context_dancer_name5_duet').val(),
+                        'del_name6' : $('#context_dancer_name6_duet').val(),
+                        'del_name7' : $('#context_dancer_name7_duet').val(),
                         'search_text' : $('#context_dancer_name_duet').val(),
                         'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
                     },
@@ -100,10 +109,17 @@ $(document).ready(function () {
         function () {
                $.ajax({
                     type: "POST",
-                    url: "/context/search/",
+                    url: "/context/search2/",
                     data: {
-                        'search_text' : $('#context_dancer_name2_duet').val(),
-                        'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
+                       'del_name1' : $('#context_dancer_name').val(),
+                       'del_name2' : $('#context_dancer_name2_duet').val(),
+                       'del_name3' : $('#context_dancer_name3_duet').val(),
+                       'del_name4' : $('#context_dancer_name4_duet').val(),
+                       'del_name5' : $('#context_dancer_name5_duet').val(),
+                       'del_name6' : $('#context_dancer_name6_duet').val(),
+                       'del_name7' : $('#context_dancer_name7_duet').val(),
+                       'search_text' : $('#context_dancer_name2_duet').val(),
+                       'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
                     },
                     success: context_dancer_name2_duet,
                     dataType: 'html'
@@ -114,10 +130,17 @@ $(document).ready(function () {
         function () {
                $.ajax({
                     type: "POST",
-                    url: "/context/search/",
+                    url: "/context/search2/",
                     data: {
-                        'search_text' : $('#context_dancer_name3_duet').val(),
-                        'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
+                       'del_name1' : $('#context_dancer_name').val(),
+                       'del_name2' : $('#context_dancer_name2_duet').val(),
+                       'del_name3' : $('#context_dancer_name3_duet').val(),
+                       'del_name4' : $('#context_dancer_name4_duet').val(),
+                       'del_name5' : $('#context_dancer_name5_duet').val(),
+                       'del_name6' : $('#context_dancer_name6_duet').val(),
+                       'del_name7' : $('#context_dancer_name7_duet').val(),
+                       'search_text' : $('#context_dancer_name3_duet').val(),
+                       'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
                     },
                     success: context_dancer_name3_duet,
                     dataType: 'html'
@@ -128,10 +151,17 @@ $(document).ready(function () {
         function () {
                $.ajax({
                     type: "POST",
-                    url: "/context/search/",
+                    url: "/context/search2/",
                     data: {
-                        'search_text' : $('#context_dancer_name4_duet').val(),
-                        'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
+                       'del_name1' : $('#context_dancer_name').val(),
+                       'del_name2' : $('#context_dancer_name2_duet').val(),
+                       'del_name3' : $('#context_dancer_name3_duet').val(),
+                       'del_name4' : $('#context_dancer_name4_duet').val(),
+                       'del_name5' : $('#context_dancer_name5_duet').val(),
+                       'del_name6' : $('#context_dancer_name6_duet').val(),
+                       'del_name7' : $('#context_dancer_name7_duet').val(),
+                       'search_text' : $('#context_dancer_name4_duet').val(),
+                       'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
                     },
                     success: context_dancer_name4_duet,
                     dataType: 'html'
@@ -142,10 +172,17 @@ $(document).ready(function () {
         function () {
                $.ajax({
                     type: "POST",
-                    url: "/context/search/",
+                    url: "/context/search2/",
                     data: {
-                        'search_text' : $('#context_dancer_name5_duet').val(),
-                        'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
+                       'del_name1' : $('#context_dancer_name').val(),
+                       'del_name2' : $('#context_dancer_name2_duet').val(),
+                       'del_name3' : $('#context_dancer_name3_duet').val(),
+                       'del_name4' : $('#context_dancer_name4_duet').val(),
+                       'del_name5' : $('#context_dancer_name5_duet').val(),
+                       'del_name6' : $('#context_dancer_name6_duet').val(),
+                       'del_name7' : $('#context_dancer_name7_duet').val(),
+                       'search_text' : $('#context_dancer_name5_duet').val(),
+                       'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
                     },
                     success: context_dancer_name5_duet,
                     dataType: 'html'
@@ -156,10 +193,17 @@ $(document).ready(function () {
         function () {
                $.ajax({
                     type: "POST",
-                    url: "/context/search/",
+                    url: "/context/search2/",
                     data: {
-                        'search_text' : $('#context_dancer_name6_duet').val(),
-                        'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
+                       'del_name1' : $('#context_dancer_name').val(),
+                       'del_name2' : $('#context_dancer_name2_duet').val(),
+                       'del_name3' : $('#context_dancer_name3_duet').val(),
+                       'del_name4' : $('#context_dancer_name4_duet').val(),
+                       'del_name5' : $('#context_dancer_name5_duet').val(),
+                       'del_name6' : $('#context_dancer_name6_duet').val(),
+                       'del_name7' : $('#context_dancer_name7_duet').val(),
+                       'search_text' : $('#context_dancer_name6_duet').val(),
+                       'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
                     },
                     success: context_dancer_name6_duet,
                     dataType: 'html'
@@ -170,10 +214,17 @@ $(document).ready(function () {
         function () {
                $.ajax({
                     type: "POST",
-                    url: "/context/search/",
+                    url: "/context/search2/",
                     data: {
-                        'search_text' : $('#context_dancer_name7_duet').val(),
-                        'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
+                       'del_name1' : $('#context_dancer_name').val(),
+                       'del_name2' : $('#context_dancer_name2_duet').val(),
+                       'del_name3' : $('#context_dancer_name3_duet').val(),
+                       'del_name4' : $('#context_dancer_name4_duet').val(),
+                       'del_name5' : $('#context_dancer_name5_duet').val(),
+                       'del_name6' : $('#context_dancer_name6_duet').val(),
+                       'del_name7' : $('#context_dancer_name7_duet').val(),
+                       'search_text' : $('#context_dancer_name7_duet').val(),
+                       'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
                     },
                     success: context_dancer_name7_duet,
                     dataType: 'html'
